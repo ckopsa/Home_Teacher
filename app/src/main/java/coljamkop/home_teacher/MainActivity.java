@@ -21,7 +21,10 @@ public class MainActivity extends AppCompatActivity implements BaseFragment.OnLi
 
     @Override
     public void onAddAppointmentButtonPress() {
-
+        FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
+        ft.replace(R.id.fragment_container, new AdditionalFragment());
+        ft.addToBackStack(null);
+        ft.commit();
     }
 
     @Override
