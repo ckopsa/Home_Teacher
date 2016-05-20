@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import coljamkop.home_teacher.dummy.AppointmentContent;
 
-public class MainActivity extends AppCompatActivity implements BaseFragment.OnListFragmentInteractionListener {
+public class MainActivity extends AppCompatActivity implements BaseFragment.OnListFragmentInteractionListener, AdditionalFragment.AddAppointmentFragmentInteractionListener {
 
     @Override
     public void onListFragmentInteraction(AppointmentContent.Appointment item) {
@@ -20,10 +20,20 @@ public class MainActivity extends AppCompatActivity implements BaseFragment.OnLi
     }
 
     @Override
-    public void onAddAppointmentButtonPress() {
+    public void onListAddAppointmentButtonPress() {
         FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
         ft.replace(R.id.fragment_container, new AdditionalFragment());
         ft.addToBackStack(null);
+        ft.commit();
+    }
+
+    @Override
+    public void onAddAppointmentButtonPress(AppointmentContent.Appointment appointment) {
+        AppointmentContent.addItem(appointment);
+        FragmentManager fm = getSupportFragmentManager();
+        BaseFragment nextFragment = new BaseFragment();
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.fragment_container, nextFragment);
         ft.commit();
     }
 

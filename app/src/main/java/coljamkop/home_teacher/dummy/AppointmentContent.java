@@ -24,14 +24,14 @@ public class AppointmentContent {
      */
     public static final Map<String, Appointment> ITEM_MAP = new HashMap<String, Appointment>();
 
-    private static final int COUNT = 25;
-
-    static {
-        // Add some sample items.
-        for (int i = 1; i <= COUNT; i++) {
-            addItem(createDummyItem(i));
-        }
-    }
+//    private static final int COUNT = 25;
+//
+//    static {
+//        // Add some sample items.
+//        for (int i = 1; i <= COUNT; i++) {
+//            addItem(createDummyItem(i));
+//        }
+//    }
 
     public static void addItem(Appointment item) {
         ITEMS.add(item);

@@ -50,7 +50,7 @@ public class BaseFragment extends Fragment {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                mListener.onAddAppointmentButtonPress();
+                mListener.onListAddAppointmentButtonPress();
             }
         });
 
@@ -99,6 +99,6 @@ public class BaseFragment extends Fragment {
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
         void onListFragmentInteraction(Appointment item);
-        void onAddAppointmentButtonPress();
+        void onListAddAppointmentButtonPress();
     }
 }
