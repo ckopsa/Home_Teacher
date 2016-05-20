@@ -7,8 +7,22 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+import coljamkop.home_teacher.dummy.AppointmentContent;
+
+public class MainActivity extends AppCompatActivity implements BaseFragment.OnListFragmentInteractionListener {
+
+    @Override
+    public void onListFragmentInteraction(AppointmentContent.Appointment item) {
+        Toast toast = Toast.makeText(getApplicationContext(), item.time, Toast.LENGTH_SHORT);
+        toast.show();
+    }
+
+    @Override
+    public void onAddAppointmentButtonPress() {
+
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
